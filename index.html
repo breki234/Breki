@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="table">
+      <div id="champions"></div>
+    </div>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $.ajax("https://eune.api.pvp.net/api/lol/eune/v1.2/champion?api_key=0195140c-442e-47a9-ad8b-1c9691befc4c")
+    .done(function(data){
+      for(i=0; i<data.champions.length; i++)
+        $.ajax("https://eune.api.pvp.net/api/lol/static-data/eune/v1.2/champion/"+ data.champions[i].id +"?api_key=0195140c-442e-47a9-ad8b-1c9691befc4c")
+        .done(function(data){
+          document.getElementById('champions').innerHTML = document.getElementById('champions').innerHTML + "<img src='"+ data.image +"' class='well'/>";
+          document.getElementById('champions').innerHTML = document.getElementById('champions').innerHTML + "<p class='well'>" + data.name +"</p>";
+        })
+    })
+
+
+</script>
+
+
+</body>
+</html>
