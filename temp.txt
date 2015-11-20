@@ -1,0 +1,3 @@
+stuff
+<img height='80px' src='http://ddragon.leagueoflegends.com/cdn/5.14.1/img/champion/{{champion.$$state.value.data.image.full}}' class='well'/>
+<a ng-href="#/second/{{$index}}" class='well'>{{champion.$$state.value.data.name}}</a>

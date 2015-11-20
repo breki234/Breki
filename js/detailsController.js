@@ -1,4 +1,9 @@
-App.controller('detailsController', function($scope) {
+App.controller('detailsController',['$scope', 'championlist', '$routeParams', function($scope, championlist, $routeParams) {
 		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
-	});
+    console.log(championlist.data);
+    championlist.success(function(data){
+      console.log(data);
+      $scope.champion = data.data[$routeParams.id];
+    })
+
+	}]);

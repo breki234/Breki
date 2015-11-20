@@ -2,35 +2,18 @@
 <html>
 <head>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script src="js/libs/angular.js"></script>
+  <script src="js/libs/angular-route.min.js"></script>
 </head>
-<body ng-app="App">
+<body ng-app="championApp">
 
+<div class="container">
 <div ng-view> </div>
-  <!--
-  <div class="container">
-    <div class="table">
-      <div id="champions"></div>
-    </div>
-  </div>
-<script>
-    $.ajax("https://eune.api.pvp.net/api/lol/eune/v1.2/champion?api_key=0195140c-442e-47a9-ad8b-1c9691befc4c")
-    .done(function(data){
-      for(i=0; i<data.champions.length; i++)
-        $.ajax("https://eune.api.pvp.net/api/lol/static-data/eune/v1.2/champion/"+ data.champions[i].id +"?api_key=0195140c-442e-47a9-ad8b-1c9691befc4c")
-        .done(function(data){
-          document.getElementById('champions').innerHTML = document.getElementById('champions').innerHTML + "<img src='"+ data.image +"' class='well'/>";
-          document.getElementById('champions').innerHTML = document.getElementById('champions').innerHTML + "<p class='well'>" + data.name +"</p>";
-        })
-    })
-
-
-</script>
-!-->
-<script scr = "js/detailsController.js"></script>
-<script scr = "js/listController.js"></script>
-<script scr = "js/Service.js"></script>
-<script scr = "js/app.js"></script>
+</div>
+<script src="js/app.js"></script>
+<script src="js/detailsController.js"></script>
+<script src="js/listController.js"></script>
+<script src="js/Service.js"></script>
 </body>
 </html>
