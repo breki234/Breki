@@ -15,6 +15,17 @@ var App = angular.module('championApp', ['ngRoute'])
                 controller: 'detailsController'
 
             })
+            .when('/forth/:id', {
+                templateUrl: 'pages/lores.html',
+                controller: 'detailsController'
+
+            })
+            .when('/fifth/:id', {
+                templateUrl: 'pages/spells.html',
+                controller: 'detailsController'
+
+            })
+
             .otherwise({
                 redirectTo: '/first'
             });
